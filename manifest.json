@@ -1,0 +1,32 @@
+{
+  "name": "Invert videos",
+  "description": "Inverts videos",
+  "version": "1.0",
+  "permissions": [
+    "activeTab", 
+    "tabs",
+    "declarativeContent", 
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["invert.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"],
+      "all_frames": true
+    }
+  ],
+  "browser_action": {
+    "default_title": "Invert videos",
+    "default_icon": {
+      "38": "on_38.png"
+    }
+  },
+  "icons": {
+    "128": "off_128.png"
+  },
+  "manifest_version": 2
+}
